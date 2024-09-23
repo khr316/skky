@@ -1,4 +1,4 @@
-<input type="text" id="UserAddress" name="UserAddress" placeholder="주소" required>
+<input type="text" id="address" name="address" placeholder="주소" required>
 <button type="button" onclick="openDaumPostcode()">주소 찾기</button><br>
 
 
@@ -8,7 +8,7 @@
     function openDaumPostcode() {
         new daum.Postcode({
             oncomplete: function (data) {
-                document.getElementById('UserAddress').value = data.address;
+                document.getElementById('address').value = data.address;
             }
         }).open();
     }
