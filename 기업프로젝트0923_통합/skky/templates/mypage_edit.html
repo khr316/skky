@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>mypage</title>
+</head>
+
+<body>
+    <header>
+        <h2>마이페이지</h2>
+        <a href="/main"><img src="" alt="사이트 메인 로고 "></a>
+    </header>
+    <div>
+        <div>
+            이메일 : test@gamil.com<br>
+            이름 : <input type="text" value="이름" readonly><br>
+            연락처 : <input type="text" value="010-1234-5678"><br>
+            주소 : <input type="text" id="address" name="address" 
+            value="광주광역시 광산구 소촌동 광주인력개발원">
+            <button type="button" onclick="openDaumPostcode()">주소 찾기</button><br>
+        </div>
+
+        <a href="/mypage/edit/check">수정</a>
+        <a href="/mypage">취소</a>
+    </div>
+
+    <!-- 다음 주소 검색 API 추가 -->
+    <script src="https://t1.daumcdn.net/mapjsapi/bundle/postcode/prod/postcode.v2.js"></script>
+    <script>
+        function openDaumPostcode() {
+            new daum.Postcode({
+                oncomplete: function (data) {
+                    document.getElementById('address').value = data.address;
+                }
+            }).open();
+        }
+    </script>
+</body>
+
+</html>
