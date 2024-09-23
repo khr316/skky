@@ -1,0 +1,15 @@
+<input type="text" id="UserAddress" name="UserAddress" placeholder="주소" required>
+<button type="button" onclick="openDaumPostcode()">주소 찾기</button><br>
+
+
+<!-- 다음 주소 검색 API 추가 -->
+<script src="https://t1.daumcdn.net/mapjsapi/bundle/postcode/prod/postcode.v2.js"></script>
+<script>
+    function openDaumPostcode() {
+        new daum.Postcode({
+            oncomplete: function (data) {
+                document.getElementById('UserAddress').value = data.address;
+            }
+        }).open();
+    }
+</script>
