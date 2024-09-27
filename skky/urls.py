@@ -1,7 +1,6 @@
 from django.urls import path
 from skky import views  # views.py에서 정의한 로그인 뷰를 가져옴
 from django.contrib import admin
-from django.urls import path
 
 urlpatterns = [
     path('machine/', views.machine, name='기계정보'), 

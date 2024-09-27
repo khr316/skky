@@ -1,5 +1,3 @@
-/* main.css */
-
 /* Reset 기본 설정 */
 * {
     margin: 0;
@@ -14,55 +12,63 @@ body {
     background-color: #f8f9fa;
     color: #333;
     line-height: 1.6;
-    padding: 0 1rem;
+    padding: 1rem;
+    padding-bottom: 70px;
+    /* 푸터 높이만큼 여백 추가 */
 }
 
-/* 슬라이더 컨테이너 */
+/* 카드 스타일 */
+.card {
+    background-color: white;
+    margin: 20px 0;
+    padding: 20px;
+    border-radius: 15px;
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+}
+
+/* 이미지 스타일 */
+.site-logo {
+    width: 80%;
+    margin: 0 auto;
+    display: block;
+}
+
+.machine-img {
+    width: 100%;
+    border-radius: 15px;
+}
+
+/* 슬라이더 스타일 */
 .slider-container {
     position: relative;
     width: 100%;
-    margin: 20px auto;
     overflow: hidden;
-    max-width: 100%;
-    border-radius: 10px;
-    /* 부드러운 모서리 */
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
-    /* 그림자 추가 */
+    border-radius: 15px;
 }
 
-/* 슬라이드들 */
 .slides {
     display: flex;
-    transition: transform 0.5s ease-in-out;
-    width: auto;
+    transition: transform 0.5s ease;
 }
 
-/* 개별 슬라이드 */
 .slide {
-    height: auto;
-    /* 슬라이드 이미지 높이를 300px로 조정 */
-    flex-shrink: 0;
-    object-fit: cover;
+    min-width: 100%;
+    border-radius: 15px;
 }
 
-/* 이전/다음 버튼 */
+/* 버튼 스타일 */
 .prev,
 .next {
     position: absolute;
     top: 50%;
     transform: translateY(-50%);
-    background-color: rgba(0, 0, 0, 0.6);
-    color: white;
+    background-color: rgba(255, 255, 255, 0.7);
     border: none;
+    border-radius: 50%;
     padding: 10px;
     cursor: pointer;
-    font-size: 1.5rem;
-    border-radius: 50%;
-    width: 40px;
-    height: 40px;
-    display: flex;
-    justify-content: center;
-    align-items: center;
+    font-size: 20px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
 }
 
 .prev {
@@ -73,74 +79,129 @@ body {
     right: 10px;
 }
 
-.prev:hover,
-.next:hover {
-    background-color: rgba(0, 0, 0, 0.8);
-}
-
-/* 타이틀 스타일 */
-h2 {
-    font-size: 1.8rem;
-    font-weight: bold;
-    color: #4CAF50;
-    text-align: center;
-    margin: 20px 0;
-}
-
-/* 텍스트 */
-p {
-    font-size: 1rem;
-    text-align: center;
-    margin-bottom: 20px;
-    color: #555;
-}
-
 /* 버튼 스타일 */
-button {
-    display: block;
-    width: 80%;
-    margin: 1rem auto;
-    padding: 12px;
-    background-color: #4CAF50;
+.exchange-btn {
+    background-color: #007bff;
     color: white;
     border: none;
-    border-radius: 5px;
-    font-size: 1.1rem;
-    font-weight: bold;
+    border-radius: 15px;
+    padding: 10px 20px;
     cursor: pointer;
-    transition: background-color 0.3s ease;
+    margin: 20px 0;
+    width: 100%;
 }
 
-button:hover {
-    background-color: #45a049;
+/* 챗봇 아이콘 */
+.chatbot-icon {
+    width: 60px;
 }
+
+/* 로그아웃 버튼 */
+.logout {
+    display: block;
+    margin: 20px auto;
+    text-decoration: none;
+    color: #007bff;
+    text-align: center;
+}
+
+/* 챗봇 아이콘 스타일 */
+.chatbot-icon {
+    position: fixed;
+    /* 고정 위치 */
+    bottom: 55px;
+    /* 아래쪽 여백 */
+    left: 20px;
+    /* 오른쪽 여백 */
+    z-index: 1000;
+    /* 다른 요소들 위에 표시 */
+}
+
+.chatbot-icon img {
+    width: 60px;
+    /* 아이콘 크기 */
+    height: auto;
+    /* 비율 유지 */
+    cursor: pointer;
+    /* 커서 포인터로 변경 */
+    border-radius: 50%;
+    /* 둥글게 모서리 */
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
+    /* 그림자 효과 */
+    transition: transform 0.3s;
+    /* 호버 애니메이션 */
+}
+
+.chatbot-icon img:hover {
+    transform: scale(1.1);
+    /* 호버 시 크기 확대 */
+}
+
 
 /* Footer 스타일 */
 footer {
-    display: flex;
-    justify-content: space-around;
-    align-items: center;
-    background-color: #f1f1f1;
-    padding: 15px 0;
     position: fixed;
+    /* 고정 위치 */
     bottom: 0;
+    /* 아래쪽에 위치 */
+    left: 0;
+    /* 왼쪽에 붙어있게 */
+    right: 0;
+    /* 오른쪽에 붙어있게 */
+    background-color: #4CAF50;
+    /* 배경색 */
+    color: white;
+    /* 글자색 */
+    padding: 10px 0;
+    /* 상하 여백 */
+    display: flex;
+    /* 유연한 박스 모델 */
+    justify-content: space-around;
+    /* 아이템 간격 조정 */
+    align-items: center;
+    /* 아이템 중앙 정렬 */
+    box-shadow: 0 -2px 5px rgba(0, 0, 0, 0.2);
+    /* 위쪽 그림자 */
+    z-index: 1000;
+    /* 다른 요소들 위에 표시 */
+}
+
+/* Footer 링크 스타일 */
+.footer-content {
+    display: flex;
+    /* 한 줄로 정렬 */
+    justify-content: space-around;
+    /* 요소 간격 조정 */
     width: 100%;
-    border-top: 2px solid #e0e0e0;
+    /* 폭을 100%로 설정 */
 }
 
-footer a {
+.footer-content a {
     text-decoration: none;
-    color: #333;
+    /* 밑줄 제거 */
+    color: white;
+    /* 글자색 */
     font-size: 1rem;
-    font-weight: bold;
+    /* 글자 크기 */
+    display: flex;
+    /* 유연한 박스 모델 */
+    flex-direction: column;
+    /* 세로 방향 정렬 */
+    align-items: center;
+    /* 아이콘 중앙 정렬 */
 }
 
+/* Footer 이미지 스타일 */
 footer img {
     width: 30px;
+    /* 아이콘 크기 */
     height: 30px;
+    /* 아이콘 크기 */
+    margin-top: 5px;
+    /* 아이콘과 텍스트 사이 여백 */
 }
 
-/* 반응형 디자인 */
+/* 모바일 반응형 디자인 */
 @media (max-width: 600px) {
     .slider-container {
         width: 100%;
@@ -149,28 +210,36 @@ footer img {
 
     .slide {
         height: 200px;
-        /* 작은 화면에서 슬라이드 높이를 200px로 조정 */
     }
 
     h2 {
         font-size: 1.4rem;
     }
 
-    p {
-        font-size: 0.9rem;
-    }
-
-    button {
+    .exchange-btn {
         width: 90%;
-        font-size: 0.95rem;
+        font-size: 1rem;
     }
 
-    footer a {
-        font-size: 0.8rem;
+    body {
+        padding-bottom: 60px;
+        /* 모바일에서 여백 조정 */
+    }
+
+    footer {
+        padding: 8px 0;
+        /* 모바일에서 여백 조정 */
     }
 
     footer img {
         width: 25px;
+        /* 모바일에서 아이콘 크기 조정 */
         height: 25px;
+        /* 모바일에서 아이콘 크기 조정 */
+    }
+
+    footer a {
+        font-size: 0.9rem;
+        /* 모바일에서 글자 크기 조정 */
     }
 }
