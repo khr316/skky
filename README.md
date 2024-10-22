@@ -23,3 +23,5 @@ YOLO 기술을 활용하여 사용자가 내용물이 없고 뚜껑 및 라벨�
 - **프론트엔드**: html, css, javascript
 - **이미지 인식**: yolo8
 - **데이터베이스**: MySQL
+
+[코드확인](https://drive.google.com/file/d/1G_sydIyUPN3kRBJhUL1_DP_j771VKBHk/view?usp=drive_link)
